@@ -65,8 +65,8 @@
 
       Or even download these fonts locally.
      */
-    // addCss("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-    // addCss("https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+    addCss("https://fonts.googleapis.com/css2?family=Vidaloka&display=swap");
+    addCss("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap");
 
     /* shadow settings, too much blur will make it super slow */
     const MAX_SHADOW_DROP = 5.0;
@@ -86,18 +86,18 @@
       --selection-color: rgb(220, 34, 240, .4);
       --logo-fade-in-duration: 9s;
 
-      --alpha-background-strong: rgba(0, 0, 0, .618);
-      --alpha-background-subtle: rgba(0, 0, 0, .25);
+      --alpha-background-strong: rgba(242, 238, 203, .618);
+      --alpha-background-subtle: rgba(242, 238, 203, .2);
 
       --font-size-base: 15px;
 
-      --content-text-color: white;
+      --content-text-color: black;
       --content-text-align: justify;
-      --content-font-family: sans-serif;
+      --content-font-family: "Frank Ruhl Libre", serif;
 
       --heading-text-color: var(--content-text-color);
       --heading-text-align: center;
-      --heading-font-family: serif;
+      --heading-font-family: "Vidaloka", serif;
 
       --footer-text-color: var(--content-text-color);
       --footer-font-family: var(--content-font-family);
@@ -297,19 +297,19 @@
       * if you use h2, it will automatically stick to the bottom of the miniature
    -->
   <a class="miniature"
-     href="#foo"
+     href="#tickets"
      data-flickity-bg-lazyload="https://xemantic.github.io/fuck-the-ai-which-is-abusing-your-reptilian-brain-to-make-you-addicted-to-movies-instead-of-art/miniatures/negentropy-miniature.jpg">
-    <h2>Foo</h2>
+    <h2>Tickets</h2>
   </a>
   <a class="miniature"
-     href="#bar"
+     href="#illutron"
      data-flickity-bg-lazyload="https://xemantic.github.io/fuck-the-ai-which-is-abusing-your-reptilian-brain-to-make-you-addicted-to-movies-instead-of-art/miniatures/burning-water-miniature.jpg">
-    <h2>Bar</h2>
+    <h2>Illutron</h2>
   </a>
   <a class="miniature"
-     href="#buzz"
+     href="#crew"
      data-flickity-bg-lazyload="https://xemantic.github.io/fuck-the-ai-which-is-abusing-your-reptilian-brain-to-make-you-addicted-to-movies-instead-of-art/miniatures/eyegasm-miniature.jpg">
-    <h2>Buzz</h2>
+    <h2>The Crew</h2>
   </a>
 </nav>
 <section id="projects" class="hidden">
@@ -318,7 +318,7 @@
       * article tag
       * the id attribute should be unique and shared with the project miniature from above
    -->
-  <article id="foo">
+  <article id="tickets">
     <!-- each project article consists of media section and description section -->
     <div class="media">
       <!--
@@ -345,7 +345,7 @@
       </p>
     </div>
   </article>
-  <article id="bar">
+  <article id="illutron">
     <div class="media">
       <!--
         CHANGE_ME: while using flickity class you can provide more slides
@@ -367,7 +367,7 @@
       </p>
     </div>
   </article>
-  <article id="buzz">
+  <article id="crew">
     <div class="media">
       <div class="medium vimeo-video" data-video-id="361821257"></div>
     </div>
