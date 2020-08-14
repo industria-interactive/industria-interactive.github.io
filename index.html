@@ -13,7 +13,7 @@
   <!--
     CHANGE_ME: replace the metadata below with your content
    -->
-  <title>Lorem Ipsum</title>
+  <title>Industria</title>
   <meta name="description"  content="Lorem ipsum dolor sit amet, consectetur adipiscing elit" />
   <meta name="keywords"     content="sed, do, eiusmod, tempor" />
   <meta name="author"       content="Numerius Negidius" />
@@ -21,7 +21,7 @@
   <!--
     CHANGE_ME: Here is what will be visible when your content is shared on social media platforms
    -->
-  <meta property="og:title"         content="Lorem Ipsum" />
+  <meta property="og:title"         content="Industria" />
   <meta property="og:type"          content="website" />
   <meta property="og:url"           content="https://xemantic.github.io/fuck-the-ai-template/" />
 
@@ -135,68 +135,20 @@
     #ifdef GL_ES
     precision mediump float;
     #endif
-
-    const float SHAPE_FACTOR = .01;
-    const float SHAPE_SIZE = 1.9;
-    const float SHAPE_ANIMATION_SPEED = 2.0;
-    const float SHAPE_PERIOD_FACTOR = 40.0;
-    const float FADE_FACTOR = .995;
-    const float EXPANSION_FACTOR = 1.1;
-    const float SHAPE_HORIZONTAL_OSCILLATION_SPEED = .3;
-    const float SHAPE_VERTICAL_OSCILLATION_SPEED = .2;
-    const float SPECTRUM_SHIFT_SPEED = .2;
-    const float ANGLE_ROTATION_SPEED = .1;
-    const float FOLDING1_COUNT = 3.;
-    const float FOLDING1_BASE = 1.;
-    const float FOLDING1_FACTOR = .1;
-    const float FOLDING1_ROTATION_SPEED = 1.2;
-    const float FOLDING2_COUNT = 7.;
-    const float FOLDING2_BASE = 1.;
-    const float FOLDING2_FACTOR = .15;
-    const float FOLDING2_ROTATION_SPEED = -.9;
-
-    #define iResolution R
-    #define iMinDimension D
-    #define iTime T
-    #define iFrame F
-    #define iChannel0 T0
-
-    uniform float T;
-    uniform vec2 R;
-    uniform float D;
-    uniform int F;
-    uniform sampler2D T0;
-
-    vec3 spectrum(float x) {
-      vec3 c = vec3(x - .75, x - .5,	x - .25) * 4.;
-      return max(vec3(1) - c * c, vec3(0));
-    }
-
-    float wave(float x) {
-      return (cos(x) + 1.) * .5;
-    }
-
-    void main() {
-      vec2 uv = gl_FragCoord.xy / iResolution;
-      vec2 st = (gl_FragCoord.xy * 2. - iResolution) / iMinDimension;
-      vec2 expansion = st / iResolution * EXPANSION_FACTOR;
-      vec2 shift = vec2(
-        sin(iTime * SHAPE_HORIZONTAL_OSCILLATION_SPEED),
-        cos(iTime * SHAPE_VERTICAL_OSCILLATION_SPEED)
-      );
-      float angle = atan(st.x, st.y) - iTime * ANGLE_ROTATION_SPEED;
-      float dist = length(st - shift);
-      float level = dist
-        + ((cos(angle * FOLDING1_COUNT + iTime * FOLDING1_ROTATION_SPEED) + FOLDING1_BASE) * FOLDING1_FACTOR)
-        + ((cos(angle * FOLDING2_COUNT + iTime * FOLDING2_ROTATION_SPEED) + FOLDING2_BASE) * FOLDING2_FACTOR);
-      vec3 prevColor = texture2D(iChannel0, uv - expansion).rgb;
-      float luma = wave((level * SHAPE_PERIOD_FACTOR) - (iTime * SHAPE_ANIMATION_SPEED));
-      vec3 color = vec3(luma)
-        * SHAPE_FACTOR
-        * spectrum(mod(dist - iTime * SPECTRUM_SHIFT_SPEED, 1.))
-        * step(level, SHAPE_SIZE);
-      gl_FragColor = vec4(prevColor * FADE_FACTOR + color, 1.);
-    }
+    uniform vec2 R;uniform float D,T;
+    uniform sampler2D T0;void main(){lowp vec3 v;highp vec2 f;f=gl_FragCoord.xy/R;
+    highp vec2 m;m=(gl_FragCoord.xy*2.-R)/D;highp vec2 h;h=f-m/R*20.7;lowp vec2 i;i=(texture2D(T0,h).xy-vec2(.3,.3))*vec2(.002,.004);
+    highp vec2 l;l=f-i;v=texture2D(T0,l).xyz*.999;highp float u;u=sqrt(dot(m,m)) + sin(atan(m.x, m.y) * 30. - T * 3.) * .05;if(u<.618){highp float e,c;
+    c=clamp((u-.618)/-.016,0.,1.);e=c*(c*(3.-2.*c))*(u/.618);highp float p;p=pow(e,20.);e=p;float o;
+    o=float(mod(T*.1,1.));vec3 y;y=vec3(3.54585,2.93225,2.41594)*(o-vec3(.695491,.492283,.276999));
+    vec3 z;z=vec3(3.90307,3.21183,3.96587)*(o-vec3(.117486,.86755,.660779));
+    v=v+(min(max(vec3(1.,1.,1.)-y*y-vec3(.0231264,.152251,.52608),0.),1.)+
+    min(max(vec3(1.,1.,1.)-z*z-vec3(.848971,.884453,.739495),0.),1.))*p*.03;if(u<.4944){highp float t;
+    t=clamp((u-.4944)/-.016,0.,1.);e=t*(t*(3.-2.*t))*(u/.4944);highp float s;s=pow(e,20.);e=s;float g;
+    g=float(mod(T*.1+.5,1.));vec3 w;w=vec3(3.54585,2.93225,2.41594)*(g-vec3(.695491,.492283,.276999));
+    vec3 a;a=vec3(3.90307,3.21183,3.96587)*(g-vec3(.117486,.86755,.660779));v=v+(min(max(vec3(1.,1.,1.)-
+    w*w-vec3(.0231264,.152251,.52608),0.),1.)+min(max(vec3(1.,1.,1.)-a*a-vec3(.848971,.884453,.739495),0.),1.))*s*.04;}
+    v=clamp(v,0.,1.);}lowp vec4 p;p.w=1.;p.xyz=v;gl_FragColor=p;}
   </script>
 
   <!-- you rather don't want to change the rest until header tag starts -->
@@ -317,7 +269,7 @@
     function y(a,c,f,e){var d=new r(a,c,f,e);a=new r(a,c,f,e);return[d,a]}
     window.LoopbackCanvas=function(a,c){function f(){v=performance.now()/1E3;if(d.width!==d.clientWidth||d.height!==d.clientHeight){d.width=d.clientWidth;d.height=d.clientHeight;b.viewport(0,0,b.canvas.width,b.canvas.height);var g=k;var l="undefined"!=typeof Symbol&&Symbol.iterator&&g[Symbol.iterator];g=l?l.call(g):{next:m(g)};for(l=g.next();!l.done;l=g.next())l.value.release();k=y(b,d.width,d.height,q);e()}b.useProgram(h);b.uniform1f(z,v);b.uniform1i(A,w);b.bindFramebuffer(b.FRAMEBUFFER,k[0].c);b.bindTexture(b.TEXTURE_2D,
     k[1].b);b.drawArrays(b.TRIANGLE_STRIP,0,4);b.useProgram(n);b.bindFramebuffer(b.FRAMEBUFFER,null);b.bindTexture(b.TEXTURE_2D,k[0].b);b.drawArrays(b.TRIANGLE_STRIP,0,4);k.reverse();w++;requestAnimationFrame(f)}function e(){var g=Math.min(d.width,d.height);b.useProgram(h);b.uniform2f(B,d.width,d.height);b.uniform1f(C,g);b.useProgram(n);b.uniform2f(D,d.width,d.height);b.uniform1f(E,g)}var d=document.getElementById(a);a=document.getElementById(c).text.trim();d.width=d.clientWidth;d.height=d.clientHeight;
-    var b=d.getContext("webgl");if(!b)throw new p("webgl context not supported on supplied canvas element: "+d);var q=b.getExtension("OES_texture_half_float");if(!q)throw new p("OES_texture_half_float is required but not supported here");if(!b.getExtension("OES_texture_half_float_linear"))throw new p("OES_texture_half_float_linear is required but not supported here");var k=y(b,d.width,d.height,q),h=u(b,a),n=u(b,"\nprecision mediump float;\n\nuniform vec2 R;\nuniform sampler2D T;\nvarying vec2 vUV;\n\nvoid main() {\n    // vUV is equal to gl_FragCoord/uScreenResolution\n    // do some pixel shader related work\n    gl_FragColor = texture2D(T, gl_FragCoord.xy/R);\n}\n\n");
+    var b=d.getContext("webgl");if(!b)throw new p("webgl context not supported on supplied canvas element: "+d);var q=b.getExtension("OES_texture_half_float");if(!q)throw new p("OES_texture_half_float is required but not supported here");if(!b.getExtension("OES_texture_half_float_linear"))throw new p("OES_texture_half_float_linear is required but not supported here");var k=y(b,d.width,d.height,q),h=u(b,a),n=u(b,"\nprecision mediump float;\n\nuniform vec2 R;\nuniform sampler2D T;\nvarying vec2 vUV;\n\nvoid main() {\n    // vUV is equal to gl_FragCoord/uScreenResolution\n    // do some pixel shader related work\n    gl_FragColor = vec4(vec3(texture2D(T, gl_FragCoord.xy/R).r, texture2D(T, gl_FragCoord.xy/R - vec2(0.002, 0.002)).r, texture2D(T, gl_FragCoord.xy/R - vec2(0.004, 0.004)).r), 1.0);\n}\n\n");
     b.useProgram(h);a=b.getAttribLocation(h,"V");c=x(b);b.bindBuffer(b.ARRAY_BUFFER,c);b.vertexAttribPointer(a,2,b.FLOAT,!1,0,0);b.enableVertexAttribArray(a);b.viewport(0,0,b.canvas.width,b.canvas.height);var B=b.getUniformLocation(h,"R"),C=b.getUniformLocation(h,"D"),z=b.getUniformLocation(h,"T"),A=b.getUniformLocation(h,"F");b.useProgram(n);var D=b.getUniformLocation(n,"R"),E=b.getUniformLocation(n,"D");e();var w=0,v=0;f()};window.WebglLoopbackException=p;
     // LoopbackCanvas: end
   </script>
@@ -327,15 +279,9 @@
 <script>if (lazyLoadingProcessor) { lazyLoadingProcessor.observe(document.body, {childList: true, subtree: true}); }</script>
 
 <header>
-  <!--
-    CHANGE_ME: put your SVG logo here, it is embedded here to improve page loading time
-    after preparing your own SVG file, minify it with this tool:
-    https://jakearchibald.github.io/svgomg/
-    , and then paste it below. (remember to add CSS classes "logo shadow")
-   -->
-  <svg class="logo shadow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132.284 27.05">
+  <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178.008 25.503">
     <defs/>
-    <path fill="#fff" fill-rule="evenodd" d="M0 .372h10.93V4.13h-6.8v7.326h5.337v3.758H4.13v11.46H0zM18.935 27.05q-3.005 0-4.584-1.708-1.58-1.711-1.58-4.907V.372h4.135v20.365q0 1.352.541 1.955.546.6 1.563.6 1.013 0 1.558-.6.546-.603.546-1.955V.372h3.981v20.063q0 3.196-1.579 4.907-1.575 1.708-4.58 1.708zm14.914 0q-2.969 0-4.527-1.691-1.559-1.691-1.559-4.771V6.462q0-3.084 1.559-4.771Q30.88 0 33.849 0q2.968 0 4.527 1.69 1.562 1.688 1.562 4.772V9.24h-3.91V6.197q0-2.443-2.064-2.443-2.067 0-2.067 2.443v14.689q0 2.406 2.067 2.406 2.063 0 2.063-2.406v-4.019h3.911v3.72q0 3.08-1.562 4.772-1.559 1.69-4.527 1.69zM42.417.372h4.13v11.084L51.81.372h4.13l-4.92 9.657 4.995 16.644h-4.32L48.2 14.953l-1.654 3.34v8.38h-4.13zM67.212 4.13h-4.32V.372h12.774V4.13h-4.32v22.543h-4.134zM77.659.372h4.13V11.08h4.436V.372h4.13v26.301h-4.13V14.837h-4.436v11.836h-4.13zm15.78 0h11.27V4.13h-7.14v6.95h5.676v3.757h-5.676v8.078h7.14v3.758h-11.27zm22.84 0h5.598l4.283 26.301h-4.13l-.752-5.221v.074h-4.696l-.753 5.147h-3.832zm4.511 17.587l-1.844-13.002h-.074l-1.803 13.002zM128.154.372h4.13v26.301h-4.13z"/>
+    <path d="M0 24.908v-.765l2.613-.17V1.63L0 1.459V.7h9.566v.76l-2.612.17v22.345l2.612.17v.764zM11.976 1.459V.7h3.63l14.56 17.644h.033L29.96 1.63l-2.592-.17V.7h6.276v.76l-2.613.17.186 23.618h-1.033L15.626 7.553h-.037l.24 16.42 2.596.17v.765h-6.28v-.765l2.613-.17-.186-22.344zm24.06 23.449v-.765l2.613-.17V1.63l-2.612-.17V.7h8.549q3.444 0 5.904.864t3.894 2.51q1.434 1.644 2.088 3.819.653 2.17.653 5.019 0 2.054-.426 3.828-.422 1.774-1.348 3.29-.926 1.518-2.31 2.597-1.381 1.079-3.39 1.683-2.01.599-4.507.599zm6.954-1.104q.918.17 1.662.17 1.732 0 3.08-.558 1.352-.563 2.257-1.555.91-.992 1.501-2.422.595-1.435.856-3.113.264-1.683.264-3.684 0-1.968-.186-3.51-.186-1.546-.702-3.005-.517-1.46-1.369-2.41-.847-.951-2.24-1.518-1.39-.57-3.254-.57-.951 0-1.869.17zM59.465 1.46V.7h9.57v.76l-2.629.17v15.846q0 .699.033 1.24.034.542.162 1.298.128.757.363 1.315.24.558.678 1.153.443.596 1.05.976.612.38 1.538.628.926.244 2.08.244 1.389 0 2.468-.43 1.079-.434 1.749-1.128.67-.695 1.1-1.695.433-1.005.603-2.038.17-1.034.17-2.241V1.629l-2.597-.17V.7h6.28v.76l-2.596.17v15.544q0 1.22-.199 2.315-.194 1.092-.719 2.229-.525 1.136-1.356 1.943-.831.806-2.232 1.322-1.398.521-3.217.521-1.88 0-3.365-.272-1.484-.273-2.497-.712-1.009-.442-1.728-1.136-.72-.7-1.129-1.394-.405-.694-.636-1.653-.228-.96-.29-1.737-.058-.781-.058-1.819V1.63zm33.205-.421q-1.224 0-2.15.289-.922.285-1.55.814-.629.526-.943 1.266-.314.735-.314 1.616 0 .628.17 1.24.173.608.731 1.245.558.636 1.617 1.318 1.062.678 2.86 1.456 2.072.95 3.506 1.781 1.435.831 2.332 1.766.901.934 1.298 2.096.4 1.161.4 2.774 0 1.22-.491 2.443-.492 1.22-1.488 2.187-.993.967-2.493 1.57-1.5.604-3.518.604-2.241 0-3.77-.417-1.526-.414-2.452-1.075-.922-.666-1.331-1.505-.406-.84-.406-1.687 0-.558.17-1.041.17-.484.5-.848.33-.368.815-.579.483-.21 1.095-.21.558 0 1.017.194.459.194.773.525.314.33.492.781.178.447.178.976 0 1.203-.699 1.815-.694.612-1.798.612v.066q.12.136.467.376.347.236.968.475.62.236 1.525.414.91.178 2.15.178 1.017 0 2.025-.273 1.01-.273 1.799-.782.79-.508 1.281-1.236.492-.732.492-1.645 0-.782-.29-1.46-.284-.678-1.082-1.38-.798-.707-2.216-1.513-1.418-.807-3.692-1.824-1.678-.715-2.757-1.57-1.075-.856-1.695-1.815-.62-.96-.86-2.001-.236-1.046-.236-2.146 0-1.393.509-2.63.512-1.24 1.48-2.161.967-.926 2.38-1.468 1.419-.546 3.234-.546 1.749 0 3.047.41 1.298.405 2.145 1.075.848.67 1.27 1.562.425.889.425 1.856 0 .509-.17.976-.169.467-.491.814-.323.348-.798.563-.476.21-1.083.21-.562 0-1.021-.185-.455-.19-.786-.513-.33-.323-.512-.76-.178-.443-.178-.968 0-.595.202-1.063.207-.467.554-.777.348-.314.823-.475.475-.161 1.017-.161v-.07q-.1-.117-.405-.381-.306-.265-.852-.525-.541-.265-1.34-.459-.797-.194-1.88-.194zm10.263 7.974l.17-8.313h18.528l.17 8.293h-.935q-.235-1.307-.413-2.1-.178-.798-.434-1.679-.256-.885-.53-1.377-.268-.492-.66-.983-.39-.492-.89-.72-.5-.231-1.161-.376-.662-.145-1.526-.145-.07 0-.28.009-.212.008-.381.008v22.345l2.63.17v.764h-9.571v-.765l2.596-.17-.104-22.328q-.169 0-.38-.008-.21-.008-.281-.008-.76 0-1.356.087-.595.082-1.079.322-.484.236-.84.509-.355.272-.66.78-.307.51-.517.985-.211.475-.443 1.298-.227.823-.72 3.402zm21.125 15.896v-.765l2.613-.17V1.63l-2.613-.17V.7h9.042q1.885 0 3.402.322 1.517.323 2.712 1.017 1.199.695 1.852 1.877.653 1.178.653 2.786 0 2.903-1.95 4.523-1.952 1.62-5.276 2.096v.033q1.422.017 2.464.46 1.046.441 1.666 1.128.62.686 1.178 1.773.372.744 1.059 2.282.69 1.534 1.368 2.72.541.968 1.137 1.497.595.525 1 .645.41.116.935.116v.934h-2.816q-1.29 0-2.038-.161-.748-.161-1.488-.77-.736-.611-1.315-1.69-.574-1.079-1.964-4.506-.202-.509-.587-1.315-.38-.806-.661-1.22-.281-.417-.661-.872-.38-.459-.782-.653-.397-.198-.84-.198-.743 0-1.136.016v10.435l2.613.17v.764zm6.954-12.336q.186.016.695.016 3.022 0 4.25-1.463 1.231-1.468 1.231-4.386 0-1.46-.347-2.477-.347-1.02-.992-1.579-.645-.562-1.426-.798-.782-.24-1.782-.24-.662 0-1.629.137zm14.916 12.336v-.765l2.613-.17V1.63l-2.613-.17V.7h9.567v.76l-2.613.17v22.345l2.613.17v.764zm10.703 0v-.765l2.054-.17L166.71 0h.765l8.297 23.974 2.236.17v.764h-9.074v-.765l2.29-.17-2-6.089h-7.603l-1.968 6.09 2.29.17v.764zm5.296-8.04l6.92-.137-3.394-10.418h-.066z"/>
   </svg>
 </header>
 <nav id="project-miniatures" class="miniatures hidden"><!-- before website is loaded everything besides the header is hidden -->
