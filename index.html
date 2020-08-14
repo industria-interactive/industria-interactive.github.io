@@ -67,6 +67,7 @@
      */
     addCss("https://fonts.googleapis.com/css2?family=Vidaloka&display=swap");
     addCss("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap");
+    addCss("custom.css");
 
     /* shadow settings, too much blur will make it super slow */
     const MAX_SHADOW_DROP = 5.0;
@@ -297,17 +298,17 @@
       * if you use h2, it will automatically stick to the bottom of the miniature
    -->
   <a class="miniature"
-     href="#tickets"
-     data-flickity-bg-lazyload="https://xemantic.github.io/fuck-the-ai-which-is-abusing-your-reptilian-brain-to-make-you-addicted-to-movies-instead-of-art/miniatures/negentropy-miniature.jpg">
-    <h2>Tickets</h2>
+     href="#the-experience"
+     data-flickity-bg-lazyload="images/miniatures/the-experience-miniature.jpg">
+    <h2>The Experience</h2>
   </a>
   <a class="miniature"
      href="#illutron"
-     data-flickity-bg-lazyload="https://xemantic.github.io/fuck-the-ai-which-is-abusing-your-reptilian-brain-to-make-you-addicted-to-movies-instead-of-art/miniatures/burning-water-miniature.jpg">
-    <h2>Illutron</h2>
+     data-flickity-bg-lazyload="images/miniatures/illutron-miniature.jpg">
+    <h2>Illutron &mdash; The Ship</h2>
   </a>
   <a class="miniature"
-     href="#crew"
+     href="#the-crew"
      data-flickity-bg-lazyload="https://xemantic.github.io/fuck-the-ai-which-is-abusing-your-reptilian-brain-to-make-you-addicted-to-movies-instead-of-art/miniatures/eyegasm-miniature.jpg">
     <h2>The Crew</h2>
   </a>
@@ -318,7 +319,7 @@
       * article tag
       * the id attribute should be unique and shared with the project miniature from above
    -->
-  <article id="tickets">
+  <article id="the-experience">
     <!-- each project article consists of media section and description section -->
     <div class="media">
       <!--
@@ -347,12 +348,10 @@
   </article>
   <article id="illutron">
     <div class="media">
-      <!--
-        CHANGE_ME: while using flickity class you can provide more slides
-       -->
       <div class="flickity">
-        <img class="medium" src="https://xemantic.github.io/fuck-the-ai-which-is-abusing-your-reptilian-brain-to-make-you-addicted-to-movies-instead-of-art/projects/002-industria/dazzle-ship1.jpg" loading="lazy" />
-        <img class="medium" src="https://xemantic.github.io/fuck-the-ai-which-is-abusing-your-reptilian-brain-to-make-you-addicted-to-movies-instead-of-art/projects/002-industria/Industria-Kazik_Pogoda-Generative-2020.jpg" loading="lazy" />
+        <img class="medium" src="images/press-release/Industria_1_Web.jpg" loading="lazy" />
+        <img class="medium" src="images/press-release/Industria_3_Web.jpg" loading="lazy" />
+        <img class="medium" src="images/press-release/Industria_4_Web.jpg" loading="lazy" />
       </div>
     </div>
     <div class="description">
@@ -367,7 +366,7 @@
       </p>
     </div>
   </article>
-  <article id="crew">
+  <article id="the-crew">
     <div class="media">
       <div class="medium vimeo-video" data-video-id="361821257"></div>
     </div>
@@ -384,16 +383,18 @@
     </div>
   </article>
 </section>
+<section class="intersection hidden">
+  <h2 class="shadow">A fully immersive seaborn Industrial Revolution experience</h2>
+</section>
 <section id="about" class="content-container hidden">
-  <h1>Lorem ipsum dolor sit amet</h1>
-  <!-- just delete everything in this section and fill with your content -->
-  <img src="https://xemantic.github.io/fuck-the-ai-which-is-abusing-your-reptilian-brain-to-make-you-addicted-to-movies-instead-of-art/images/Negentropy-Kazik_Pogoda-Generative-2020.jpg"
-       alt="Negentropy, Kazik Pogoda, 2020"
+  <img src="images/press-release/Industria_2_Web.jpg"
+       alt="Circus performance at Illutron"
        class="left width-shorter"
        loading="lazy" />
   <!-- you can control the position of images -->
+  <h2>Tickets</h2>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    A place for ticket selling component.
   </p>
 </section>
 <footer class="shadow hidden">

@@ -1,0 +1,14 @@
+.intersection {
+  min-height: var(--golden-ratio-height-shorter);
+  display: flex;
+  color: var(--footer-text-color);
+  font-family: var(--heading-font-family);
+  padding: var(--content-padding);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.intersection h2 {
+  font-size: 2rem;
+}
