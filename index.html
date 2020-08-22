@@ -486,7 +486,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        class="right width-shorter"
        loading="lazy" />
   <p>
-    A place for ticket component.
+    <!-- place for ticket widget-->
+      <div id="billetto_widget_464964"></div>
+      <script type="text/javascript">
+        function init_widget_464964 () {
+          var http_464964 = new XMLHttpRequest();
+          http_464964.open("GET", "https://billetto.dk/en/e/464964/widget_new?theme=white", true );
+          http_464964.onload = function ( e ) {
+            if ( http_464964.readyState == 4 && (http_464964.status == 200 || http_464964.status == 304) ) {
+              document.getElementById("billetto_widget_464964").innerHTML = http_464964.responseText;
+            }
+          };
+          http_464964.send(null);
+        }
+        init_widget_464964();
+      </script>
   </p>
 </section>
 <footer class="shadow hidden">
