@@ -26,6 +26,10 @@
   background-color: #008CBA;
 }
 
+.smallText {
+  font-size: 14px;
+}
+
 .popup {
   position: relative;
   display: inline-block;
