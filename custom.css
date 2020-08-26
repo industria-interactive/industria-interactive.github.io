@@ -23,7 +23,7 @@
   font-size: 24px;
   margin: 4px 2px;
   cursor: pointer;
-  background-color: #008CBA;
+  background-color: #006e9c;
 }
 
 .smallText {
@@ -70,4 +70,8 @@
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity:1 ;}
+}
+
+.industria-logo {
+  filter: drop-shadow(0.13vw 0.13vw 0 #5b6066);
 }
