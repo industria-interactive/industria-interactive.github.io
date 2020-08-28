@@ -255,12 +255,8 @@
       try {
         shaderCanvas("shader-background", "feedback-shader", "screen-shader");
       } catch (e) {
-        if (e instanceof WebglLoopbackException) {
-          const shaderBackground = document.getElementById("shader-background");
-          shaderBackground.classList.add("fallback");
-        } else {
-          throw e;
-        }
+        const shaderBackground = document.getElementById("shader-background");
+        shaderBackground.classList.add("fallback");
       }
 
       const script = document.createElement("script");
