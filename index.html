@@ -57,6 +57,7 @@
   <style>
     :root {
       --background: black;
+      --background-shader-fallback: url("images/fallback-background.jpg");
       --selection-color: rgb(220, 34, 240, .4);
       --logo-fade-in-duration: 9s;
 
@@ -185,10 +186,15 @@
       height: 100vh;
       z-index: var(--z-index-background-layer);
     }
+    #shader-background.fallback {
+      background: var(--background-shader-fallback);
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+    }
     .hidden {
       display: none;
     }
-
     // moving shadow: start
     :root {
       /* initial shadow values - later on supplied from mouse or touch events */
@@ -245,7 +251,18 @@
       if (lazyLoadingProcessor) {
         lazyLoadingProcessor.disconnect();
       }
-      shaderCanvas("shader-background", "feedback-shader", "screen-shader");
+
+      try {
+        shaderCanvas("shader-background", "feedback-shader", "screen-shader");
+      } catch (e) {
+        if (e instanceof WebglLoopbackException) {
+          const shaderBackground = document.getElementById("shader-background");
+          shaderBackground.classList.add("fallback");
+        } else {
+          throw e;
+        }
+      }
+
       const script = document.createElement("script");
       script.src = MAIN_JS;
       document.head.appendChild(script);
@@ -265,13 +282,13 @@
     window.WebglLoopbackException=r;
     // shaderCanvas: end
   </script>
-  <!-- FB pixel -->
-
 </head>
 <body>
 <script>if (lazyLoadingProcessor) { lazyLoadingProcessor.observe(document.body, {childList: true, subtree: true}); }</script>
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLS99FX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2406291223000018&ev=PageView&noscript=1" /></noscript>
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLS99FX" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2406291223000018&ev=PageView&noscript=1" />
+</noscript>
 <header>
   <svg class="logo industria-logo" version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
        viewBox="0 0 841.89 595.28" xml:space="preserve">
