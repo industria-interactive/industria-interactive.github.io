@@ -44,18 +44,7 @@
     function addScript(src, extender) { scriptsToLoad.push([src, extender]); }
     function addCss(src) { cssToLoad.push(src); }
   </script>
-
-  <!--
-    CHANGE_ME: settings
-   -->
   <script>
-    /*
-      Most likely you want to go for your own typography, you can use
-
-      https://fonts.google.com/
-
-      Or even download these fonts locally.
-     */
     addCss("https://fonts.googleapis.com/css2?family=Vidaloka&display=swap");
     addCss("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap");
     addCss("custom.css");
@@ -65,10 +54,6 @@
     const MAX_SHADOW_DROP = 5.0;
     const MAX_BLUR_RADIUS = .9;
   </script>
-
-  <!--
-    CHANGE_ME: alter the style
-   -->
   <style>
     :root {
       --background: black;
@@ -95,10 +80,6 @@
       --paragraph-spacing: .618rem;
       --heading-margin-bottom: .5rem;
 
-      --miniature-title-height: calc(var(--golden-ratio-height-shorter) * .236);
-      --miniature-title-padding: calc(var(--golden-ratio-height-shorter) * 0.0618);
-      --miniature-title-font-size: calc(var(--golden-ratio-height-shorter) * .13);
-
       --content-padding-base: .5vw;
       --content-padding-increment: 1vw;
       --content-padding: calc(var(--content-padding-base) + var(--content-padding-increment));
@@ -109,11 +90,6 @@
       --font-size: calc(var(--font-size-base) + var(--font-size-increment));
     }
   </style>
-
-  <!--
-    CHANGE_ME: you can play with coefficients of the background shader or contact me
-    and I can make some special shader for your needs - https://xemantic.com
-    -->
   <script type="x-shader/x-fragment" id="feedback-shader">
     #ifdef GL_ES
     precision mediump float;
