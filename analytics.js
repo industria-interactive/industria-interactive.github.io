@@ -1,3 +1,4 @@
+// TODO ga tag should be rather added to tag manager and removed from here
 const GA_ID = "UA-175565856-1";
 const GA_DIST = "https://www.googletagmanager.com/gtag/js?" + GA_ID;
 

@@ -40,15 +40,19 @@
 
   <!-- don't touch this -->
   <script>
-    const scriptsToLoad = []; const cssToLoad = [];
+    const scriptsToLoad = []; const cssToLoad = []; const scriptsToPostLoad = [];
     function addScript(src, extender) { scriptsToLoad.push([src, extender]); }
+    function addPostLoadScript(src, extender) { scriptsToPostLoad.push([src, extender]); }
     function addCss(src) { cssToLoad.push(src); }
   </script>
   <script>
+    const fuckTheAiConfig = {
+      useVimeo: false
+    };
     addCss("https://fonts.googleapis.com/css2?family=Vidaloka&display=swap");
     addCss("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap");
     addCss("custom.css");
-    addScript("custom.js");
+    addPostLoadScript("analytics.js");
 
     /* shadow settings, too much blur will make it super slow */
     const MAX_SHADOW_DROP = 5.0;
