@@ -47,7 +47,7 @@
   </script>
   <script>
     const fuckTheAiConfig = {
-      useVimeo: false
+      useVimeo: true
     };
     addCss("https://fonts.googleapis.com/css2?family=Vidaloka&display=swap");
     addCss("https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre&display=swap");
@@ -306,6 +306,11 @@
     <h2>The Experience</h2>
   </a>
   <a class="miniature"
+     href="#about-immersive-experience"
+     data-flickity-bg-lazyload="images/miniatures/about-immersive-experience-miniature.jpg">
+    <h2>About Immersive Experience</h2>
+  </a>
+  <a class="miniature"
      href="#illutron"
      data-flickity-bg-lazyload="images/miniatures/the-experience-miniature.jpg">
     <h2>Illutron &mdash; The Ship</h2>
@@ -317,13 +322,7 @@
   </a>
 </nav>
 <section id="projects" class="hidden">
-  <!--
-    CHANGE_ME: put your projects
-      * article tag
-      * the id attribute should be unique and shared with the project miniature from above
-   -->
   <article id="the-experience">
-    <!-- each project article consists of media section and description section -->
     <div class="media">
       <div class="flickity">
         <img class="medium" src="images/experience/experience1.jpg" loading="lazy" />
@@ -337,12 +336,6 @@
       </div>
     </div>
     <div class="description">
-      <!--
-        CHANGE_ME: put:
-          * your project title in h2
-          * intro class on paragraph will be rendered in italics
-          * put more paragraphs and standard HTML formatting
-       -->
       <h2 class="heading-color">The Experience</h2>
       <!-- intro will be rendered in italics -->
       <p class="intro">
@@ -371,6 +364,44 @@
           Get your tickets
         </a>
       </p>
+    </div>
+  </article>
+  <article id="about-immersive-experience">
+    <div class="media">
+      <div class="flickity">
+        <img class="medium" src="images/immersive/illutron-interaction.jpg" loading="lazy" />
+        <div class="medium vimeo-video" data-video-id="287868063"></div>
+        <div class="medium vimeo-video" data-video-id="295435939"></div>
+        <div class="medium vimeo-video" data-video-id="400938448"></div>
+      </div>
+    </div>
+    <div class="description">
+      <h2 class="heading-color">About Immersive Experience</h2>
+      <p class="intro">
+        Wikipedia &mdash; <q>Immersive theatre differentiates itself from traditional theater by removing
+        the stage and immersing audiences within the performance itself. Often, this is accomplished
+        by using a specific location (site-specific), allowing audiences to converse with the actors
+        and interact with their surroundings (interactive), thereby breaking the fourth wall.</q>
+      </p>
+      <p>
+        We are strongly inspired and influenced by immersive and interactive theatre giants from:
+      </p>
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=k12NZLh_Xvg&ab_channel=InsidetheMagic">PunchDrunk Theatre, UK</a></li>
+        <li><a href="https://youtu.be/lWFG9pRpDTA">Meow Wolf, US </a></li>
+        <li>And the newly formed (Dec 2019) and wildly successful <a href="https://dreamworld.space"> Dream World, Berlin</a></li>
+      </ul>
+      <p>
+        INDUSTRIA develops Copenhagen’s interactive scene work with a distinctly Danish flavour.
+      </p>
+      <p>
+        Some of our artists and collaborators on Industria having worked with MeowWolf, DreamWorld,
+        and Blast Theory UK and countless more over the past 6 years.
+      </p>
+      <blockquote>
+        If I have seen further it is by standing on the shoulders of Giants
+      </blockquote>
+      <p>Issac Newton, 1675</p>
     </div>
   </article>
   <article id="illutron">
@@ -511,7 +542,6 @@
     The organizers are mindful of corona guidelines and have taken measures to incorporate safe
     distancing practices, sanitization, even masks into the world building experience as well as
     keeping track of the number of participants who can safely participate via controlled ticketing.
-  </p>
   <p>
     <a href="https://www.instagram.com/illutronboat/" class="button">
       Illutron on Instagram
